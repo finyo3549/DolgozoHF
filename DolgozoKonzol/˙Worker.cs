@@ -30,6 +30,10 @@ namespace DolgozoKonzol
             return Name;
         }
     }
+    public partial class Worker
+    {
+        public static Worker[] FromJson(string json) => JsonConvert.DeserializeObject<Worker[]>(json, Converter.Settings);
+    }
     internal static class Converter
     {
         public static readonly JsonSerializerSettings Settings = new JsonSerializerSettings
